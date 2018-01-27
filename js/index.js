@@ -133,12 +133,39 @@ $(".zhangshang").mouseenter(function(){
         	timer = setInterval( autoPlay,1500 );
         });
         
+	$("#banner").mouseenter(function(){
+//		alert()
+		$('#span1').css("display","block");
+		$('#span2').css("display","block");
+	}).mouseleave(function(){
+		$('#span1').css("display","none");
+		$('#span2').css("display","none");
+	})
+   $("#span1").mouseenter(function(){
+      	clearInterval( timer ); 
+		$('#span1').css("background-position","0 -60px");
+		$('#span2').css("background-position","-30px -60px");
+	}).mouseleave(function(){
+		$('#span1').css("background-position","0 0");
+		$('#span2').css("background-position","-30px 0");
+		timer = setInterval( autoPlay,1500 );
+	})
+     
+    $("#span2").mouseenter(function(){
+    	clearInterval( timer ); 
+		$('#span1').css("background-position","0 -60px");
+		$('#span2').css("background-position","-30px -60px");
+	}).mouseleave(function(){
+		$('#span1').css("background-position","0 0");
+		$('#span2').css("background-position","-30px 0");
+		timer = setInterval( autoPlay,1500 );
+	})
+   
         //banner  点击按钮 滑动
      $("#span1").click(function(){    
      	  index--;
      	  if( index == 0  ){
      	  	   index = 0 ;
-		      flag = false;
      	  }
      	  $(".banner_list li").eq(index)
 			          .fadeIn(1500)
@@ -168,40 +195,18 @@ $(".zhangshang").mouseenter(function(){
 	      $("#banner_wrap").css("background",arr[index]);
      	});
          
-	//banner  点击按钮滑动
-	$("#banner").mouseenter(function(){
-//		alert()
-		$('#span1').css("display","block");
-		$('#span2').css("display","block");
-	}).mouseleave(function(){
-		$('#span1').css("display","none");
-		$('#span2').css("display","none");
-	})
-   
-   $("#span1").mouseenter(function(){
-      	clearInterval( timer ); 
-		$('#span1').css("background-position","0 -60px");
-		$('#span2').css("background-position","-30px -60px");
-	}).mouseleave(function(){
-		$('#span1').css("background-position","0 0");
-		$('#span2').css("background-position","-30px 0");
-		timer = setInterval( autoPlay,1500 );
-	})
-     
-    $("#span2").mouseenter(function(){
-    	clearInterval( timer ); 
-		$('#span1').css("background-position","0 -60px");
-		$('#span2').css("background-position","-30px -60px");
-	}).mouseleave(function(){
-		$('#span1').css("background-position","0 0");
-		$('#span2').css("background-position","-30px 0");
-		timer = setInterval( autoPlay,1500 );
-	})
-   
+     //鼠标移入banner_ol手动轮播
+     $("#banner_ol li").mouseenter(function(){
+     	  clearInterval( timer ); 
+     	  var index = $(this).index()-1;
+     	   autoPlay()
+     }).mouseleave(function(){
+     	timer = setInterval( autoPlay,1500 );
+     });
    //banner  选项卡  banner_right
-   $("#banner_tab_top em").mouseenter(function(){
+   $("#banner_tab_top").find("em").mouseenter(function(){
    	   $(this).css({"border-bottom":"none"});
-   	   $("#banner_tab_center div").eq( $(this).index() )
+   	   $("#banner_tab_center").find("div").eq( $(this).index() )
    	                          .addClass("show")
    	                          .siblings()
    	                          .removeClass("show")
@@ -213,7 +218,18 @@ $(".zhangshang").mouseenter(function(){
    	    
    });
    
- 
-  
-   
-   
+//鼠标划过  banner上的ul 对应的nav_con 显示于隐藏
+$("#nav_box").mouseenter(function(){	
+	$("#nav_con").css("display","block");
+	$("#nav_show").children().find("li").mouseenter(function(){
+		$("#nav_con").children().eq($(this).index()).css({"display":"block","z-index":1000})
+		                                            .siblings()
+		                                            .css({"display":"none","z-index":0});
+	}).mouseenter(function(){
+		$("#nav_con").children().eq($(this).index()).css({"display":"block","z-index":1000})
+		                                            .siblings()
+		                                            .css({"display":"none","z-index":0});
+	})
+}).mouseleave(function(){
+	$("#nav_con").css("display","none");
+})

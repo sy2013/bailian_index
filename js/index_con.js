@@ -1,25 +1,42 @@
 //生鲜水果  无缝轮播
 //进度条
-
-//	var index = 0; 
-//	var timer = null;	
-//	timer  = setInterval( autoPlay,1500 );
-//     function autoPlay(){
-//     	   index++;
-//     	   if( index == $(".pic_left ul").children.length ){
-//     	   	   index = $(".pic_left ul").children.length
-//     	   }
-//     	   startMove( $(".pic_left ul"),{ "left" : -index*306 } )       	   
-//		   var slider = document.getElementsByClassName("slider");
-//			      var timer = setInterval(function(){
-//			      	 if(  slider.offsetWidth == 30 ){
-//			      	 	alert( slider.offsetWidth)
-//			      	 	clearInterval( timer );
-//			      	 }else{
-//			      	 	 slider.style.width =  slider.offsetWidth + 1 + "px";
-//			      	 }
-//			      },1500);
-//     }
+	var index = 0; 
+	var timer = null;	
+	timer  = setInterval( autoPlay,1500 );
+       function autoPlay(){
+       	   index++;
+       	   if( index == $(".pic_left ul").children.length ){
+       	   	   index = $(".pic_left ul").children.length
+       	   }
+       	   $(".pic_left").children().animate( {marginLeft:-306} ,1500,function(){
+	       	   $(".pic_left").children().find("li:first").appendTo($(".pic_left").children());
+	       	   $(".pic_left").children().css( "margin-left",0 );       	   	
+       	   });
+       	   
+       }
+       //进度条
+//     var slider = document.getElementsByClassName( "slider" );
+//   for( let i = 0  i < 3 ;i++ ){
+//   	let timer = setinterval( function(){
+//   		if( parseInt(slider[i].style.width)==30){
+//   			clearInterval( timer );
+//   		}else{
+//   			 slider[i].style.width = parseInt(slider[i].style.width) + 1 + "px" ;
+//   			 slider[i].style.background = "#ccc"
+//   		}
+//   	},1500);
+//   }
+//  楼层图片移动
+  $(".pic_right_ul").children().find("img").mouseenter(function(){
+  	  $(this).stop().animate({ "margin-left":-20 },200);
+  }).mouseleave(function(){
+  	$(this).stop().animate({ "margin-left":0 },200);
+  });
+  $(".pic_right_div").children().find("img").mouseenter(function(){
+  	  $(this).stop().animate({ "margin-left":-20 },200);
+  }).mouseleave(function(){
+  	$(this).stop().animate({ "margin-left":0 },200);
+  });
 //楼层
    var flag = true;
 	$(window).scroll(function(){
@@ -97,3 +114,5 @@
     $("#shopping_right li:last").click(function(){
     	 $("html,body").scrollTop(0);
     });
+    //guesslike
+    
