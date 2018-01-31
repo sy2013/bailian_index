@@ -1,19 +1,20 @@
 //生鲜水果  无缝轮播
 //进度条
-	var index = 0; 
-	var timer = null;	
-	timer  = setInterval( autoPlay,1500 );
-       function autoPlay(){
-       	   index++;
-       	   if( index == $(".pic_left ul").children.length ){
-       	   	   index = $(".pic_left ul").children.length
-       	   }
-       	   $(".pic_left").children().animate( {marginLeft:-306} ,1500,function(){
-	       	   $(".pic_left").children().find("li:first").appendTo($(".pic_left").children());
-	       	   $(".pic_left").children().css( "margin-left",0 );       	   	
-       	   });
-       	   
-       }
+	function CarouselFigure(ul){
+		var timer = null;	
+		timer  = setInterval( autoPlay,2000 );
+	       function autoPlay(){
+	       	   ul.animate( {"marginLeft":-306} ,1500,function(){
+		       	   ul.css( "margin-left",0 ).find("li:first").appendTo(ul);       	   	
+	       	   });
+	       	   
+	       }
+	}			
+	CarouselFigure( $(".pic_left_1_ul"))
+	CarouselFigure( $(".pic_left_2_ul"))
+	CarouselFigure( $(".pic_left_3_ul") )
+	CarouselFigure( $(".pic_left_4_ul"))
+	CarouselFigure( $(".pic_left_5_ul"))	
        //进度条
 //     var slider = document.getElementsByClassName( "slider" );
 //   for( let i = 0  i < 3 ;i++ ){
@@ -48,10 +49,30 @@
 	     }else{
 		     	$("#LoutiNav").css( "display","block" );
 	     		flag = false;	
-	      $(this).find("span").addClass("active").end().siblings().find("span").removeClass("active");
-	   }
+	    //  $(this).find("span").addClass("active").end().siblings().find("span").removeClass("active")
+	    	}
+	      	 //满足条件的楼层在可视区内面积最大  
+	      	 $floor = $(".divs").filter(function(){//返回某个表达式
+	      	 	return Math.abs($(this).offset().top - $(document).scrollTop() ) < $(this).outerHeight()/2;
+	      	 }).index();
+//	      	 var index = $floor.index();
+	      	 //console.log( index );
+	      	 
+	      	 if( $floor != -1){
+	      	 	console.log( $floor );
+		      	 $(".loutihao li:not(.last)").eq( $floor )
+//									      	  .find("span")
+									      	  .addClass("pink")
+//									      	  .end()
+									      	  .siblings()
+//									      	  .find("span")
+									      	  .removeClass("pink");     	 	
+	      	 }else{
+	      	 	$(".loutihao li:not(.last)").find("span").removeClass( "pink" );
+	      	 }      		
 	})
-	     
+	  
+	  
 	
 	//找到对应楼层
 	//点击楼层号  找到对应楼层  页面滚走的距离与楼层的top值相等
@@ -77,32 +98,10 @@
      	  });
     })
 //触发滚动条时  对应的楼层号高亮
-	 $(window).scroll(function(){
-	 	//alert()
-	 	//alert(flag)
-      	if( flag ){
-	      	 var sTop = $(document).scrollTop();
-	      	// alert(sTop)
-	      	 //满足条件的楼层在可视区内面积最大  
-	      	 $floor = $("#louti").children("div").filter(function(){//返回某个表达式
-	      	 	return Math.abs($(this).offset().top - sTop) < $(this).outerHeight()/2;
-	      	 })
-	      	 var index = $floor.index(); 
-	      	// alert($floor)
-	      	// alert(index);
-	      	 //倒着的index 值从-1开始  判断一下
-	      	 if( index != -1){
-		      	 $("#LoutiNav li:not(.last)").eq(index)									      	 
-									      	 .addClass("pink")
-									      	 .siblings()									    	 
-									      	 .removeClass("pink");     	 	
-	      	 }else{
-	      	 	$("#LoutiNav li:not(.last)").find("span").removeClass( "pink" );
-	      	 }      		
-      	}
-      })
-	 
-    
+	
+	
+	
+	
     //右侧定位
     $("#shopping_right li").mouseenter(function(){
     	$(this).css( "background","red" );
@@ -115,4 +114,77 @@
     	 $("html,body").scrollTop(0);
     });
     //guesslike
-    
+    //login1  
+//  $(".a_login").mouseenter(function(){
+//  	//alert();
+//  	$("#login1_wrap").animate( {"left":"990px"},1500) 
+//  })
+    $("#login1 p").find(".iconfont").click(function(){
+    	//alert();
+    	$("#login1_wrap").animate( {"left":"1235px"},1500) 
+    })
+    var flag = true//
+   $(".a_login").click(function(){
+	 	if( flag ){
+	    	$("#login1_wrap").animate( {"left":"990px"},1500,function(){
+	    		flag = false;
+	    	})
+	 	 }
+	 	flag = true;
+    })
+
+      //登录验证
+// $("#_form").submit(function(){
+// 	   if(){
+// 	   	
+// 	   }
+// })
+   
+   //验证用户名
+//  $("#uname").addListener("",function(e){
+//  	var e = e || event;
+// 	    $("#uname").val("") 
+//  	
+//  })
+//  $("#upwd").keydown(function(){
+// 	    $("#upwd").val("") 
+// })
+   	   var arr = getCookie("message")//[ "","" ]
+   	   
+   	   //console.log( arr );
+   	  var uname = arr[0]
+      // console.log( uname );
+      var upwd = arr[1]
+//    console.log( upwd );
+      var flagName = null ;
+   $("#uname").blur(function(){
+   	    if(  $("#uname").val() !=  uname ){
+   	    	flagName = false;
+   	    	 $(".tishi_p1").css("display","block");
+   	    	 $(".tishi_p1").html( "用户名错误" );
+   	    }else{
+   	    	flagName = true;
+   	    }
+   });
+   
+   var flagpwd = null ;
+   $("#upwd").blur(function(){
+   	    if(  $("#upwd").val() !=  upwd ){
+   	    	flagpwd = false;
+   	    	 $(".tishi_p2").css("display","block");
+   	    	 $(".tishi_p2").html( "密码错误" );
+   	    }else{
+   	    	flagpwd = true;
+   	    }
+   });
+
+    $(".denglu").click(function(){
+    	if(  flagName && flagpwd ){
+    		location.href = "login_page.html"
+    	}
+    });
+
+
+
+
+

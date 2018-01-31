@@ -37,5 +37,5 @@ function toTwo(val){
 
 //定义一个时间差函数  
 function timeDiff(start,end){
-	return Math.abs( start.getTime()-end.getTime() ) / 1000;
+	return Math.abs( start.getTime()-end.getTime()) / 1000;
 }

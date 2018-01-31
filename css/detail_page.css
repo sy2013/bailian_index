@@ -12,7 +12,7 @@ body{font-size:12px;font-family:"微软雅黑";}
 .clear{clear:both;height:0;overflow:hidden;}
 #title_wrap,#header_img,#banner_wrap{width:100%;}
 #title,#header_img img,#logo,#nav,#banner{width:1190px;margin: 0 auto;}
-/*-----------title-----------  */
+/*----------------title---------------*/
 #title_wrap{
 	height: 30px;
 	background: #f7f7f7;
@@ -27,7 +27,10 @@ body{font-size:12px;font-family:"微软雅黑";}
 	background:url(../images/top1.png) no-repeat 0 center;
 	position:relative;
 }
-
+.title_Pleft span:nth-child(1){
+	border-right:1px solid #ccc;
+	padding: 0 12px 0 18px;
+}
 .title_Pleft span:nth-child(2) a:nth-child(1){
 	padding-left: 10px;
 	background: url(../images/top3.jpg) no-repeat 65px;
@@ -67,6 +70,7 @@ body{font-size:12px;font-family:"微软雅黑";}
 	top:30px;
 	text-align: center;
 	display: none;
+	z-index: 10;
 }
 #myBailian_list>span{
    display: block;
@@ -78,6 +82,7 @@ body{font-size:12px;font-family:"微软雅黑";}
 	top:30px;
 	width: 692px;
 	height: 158px;
+	z-index: 10;
 }
 #myChongzhi_list>ul{
 	width:100px;
@@ -150,7 +155,8 @@ body{font-size:12px;font-family:"微软雅黑";}
 	padding-left:20px ;
 	border:none;
 }
-#title .login a b{
+#title .login a a{
+	
 	padding-left:20px;
 }
 /*--------------logo-------------------*/
@@ -360,241 +366,236 @@ body{font-size:12px;font-family:"微软雅黑";}
 	
 	margin-bottom: 8px;
 }
-/*----------------手机详情------------------*/
-#iphone{
+/*-----------------all------------*/
+#all{
 	width:1190px;
-	height: 24px;
-	padding:10px 0 25px 0;
-	border-bottom:1px solid #ccc;
+	height: 54px;
+	border-bottom:2px solid #000;
 	margin:0 auto;
-	margin-bottom: 30px;
+	line-height: 54px;
 }
-#iphone p{
+#all .all_qubu{
 	float:left;
-	margin-top: 10px;
+	font-size: 15px;
 }
-#iphone h1{
-	float:right;	
+#all .all_form{
+	float:left;
+	width:163px;
+	height: 26px;
+	margin:15px 0 0 15px;
+	border:1px solid #ccc;
+}
+#all .all_form input:nth-child(1){
+	float:left;
+	border:none;
+	width:125px;
+	height: 22px;
+	text-indent: 12px;
+}
+#all .all_form .butt{
+	float:left;
+	height: 22px;
+	width: 22px;
+	border:none;
+	background: url(//img.iblimg.com/respc-1/resources/v4.0/css/i/select-button.png) no-repeat center center;
+	margin:3px 0 0 10px;
+}
+#all .all_p{
+	float:right;
 }
 
-/*----------------大放镜------------------*/
-#box_wrap{
+/*-----------------品牌------------*/
+#pinpai{
 	width:1190px;
+	height:128px;
+	border-bottom: 1px solid #888;
 	margin:0 auto;
-	height: 450px;
 }
- #box {
-		position:relative;
-		/*border:1px solid #ccc;*/
-		width: 450px;
-		height:450px;
-		float:left;
-        }
-#box ul{
-    overflow: hidden;
-  /*  border-top:1px solid #ccc;*/
-	position:absolute;
-	top:460px;
+#pinpai .pinpai_p1{
+	width:100px;
+	height: 128px;
+	background: #ccc;
+	float: left;
+}
+#pinpai .pinpai_p1 i{
+	float:right;
+	margin:10px 10px 0 0 ;
+}
+#pinpai .pinpai_p2{
+    width:925px;
+	height: 128px;
+	float: left;
+	margin-left:10px;
+}
+#pinpai .pinpai_p2 span{
+	float: left;
+	display: block;
+	width:110px;
+	height: 50px;
+	border:1px solid #ccc;
+	margin:5px 5px;
+	position: relative;
+	text-align: center;
+	line-height: 50px;
+}
+#pinpai .pinpai_p2 span img{
+	width:110px;
+	height: 50px;
+	position: absolute;
 	left:0;
-}
-#ul_img{
-	width:80px;
-	height: 80px;
-}
-#box li {
-	width:80px;
-	height: 80px;
-    float: left;	 
-	border: 1px solid #ccc;
-	margin:20px;
-}
-#small{
-	width:450px;
-	height:450px;	
-	border: 1px solid #ccc;
-}
- #s_img{
-	width:360px;
-	height:360px;
-	position:absolute;
 	top:0;
-	left:0;
-	margin:45px;
-}
-#big{
-		width:450px;
-		height:450px;
-		border:1px solid #ccc;
-		overflow:hidden;
-		position:absolute;
-		top:0;
-		left:460px;
-	    display:none;
-	}
-#mask{
-		width:253px;
-		height:253px;
-		background:red;
-		opacity:0.4;
-		/*background: url(images/4m.jpg);*/
-		position:absolute;
-		top:0;
-		left:0;
-		display:none;
-	}
-.bigImage{
-	    width:800px;
-	    height: 800px;
-		position:absolute;
-		top:0;
-		left:0;
-	}
-#small{
-		position:relative;
-		cursor:move;  /*//鼠标移动状态*/
-	}
-/*#layer{
-	position:absolute;
-	top:0;
-	left:0;
-	width: 350px;
-	height: 350px;
-	background: gray;
-	opacity:0.4 ;
-	display:none;
 	
-}	 */
-#box_con{
-	float:left;
-	margin-left:25px;	
 }
-#box_con h2{
-	font-size: 20px;
-	font-weight: 900;
-}
-#box_con h2 b{
-	display:inline-block;
-	width:70px;
-	height:20px;
-	background:#be4141;
-	font-size:12px;
-	text-align: center;
-	line-height: 20px;
-	color:#fff;
-}
-#box_con h4{
-	margin:15px 0;
-	font-size: 15px;
-}
-#box_con  .time{
-	width:710px;
-	height:106px;
-}
-.time_down{
-	font-size:20px;
-	font-weight: 600;
-}
-.time_p1{
-	width:710px;
-	height:36px;
-	color:#fff;
-	font-size: 15px;
-	background: red;
-	text-indent: 20px;
-	line-height:36px ;
-}
-.time_p1 span{
-	margin-right: 200px;
-} 
-.time_p2{
-	width:710px;
-	height:70px;
-	color:#000;
-	font-size: 15px;
-	background:#ccc;
-	line-height: 70px;
-	text-indent: 24px;
-}
-.time_p2 span{
-	font-size: 20px;
-	color:red;
-}
-#sel li{
-	margin-top: 15px;
-	text-indent: 20px;
-}
-#sel .li_2 p:nth-child(2){
-	margin-top:25px;
-	text-indent: 85px;
-	color:#888;
-	margin-bottom: 30px;
-}
-#sel .li_4 p{
-	display: inline-block;
-}
-#sel .li_4 p span:nth-child(1){
-	width:19px;
-	border-right: 1px solid #ccc;
-	background:#ccc;
-	display: inline-block;
-	float:left;
-}
-#sel .li_4 p span:nth-child(2){
-	border-right: 1px solid #ccc;
-	display: inline-block;
-	float:left;
-}
-#sel .li_4 p span:nth-child(3){
-	width:20px;
-	border-right: 1px solid #ccc;
-	display: inline-block;
-	float:left;
-	background:#ccc;
-}
-#sel .li_5 p:nth-child(1){
-	width:168px;
+#pinpai .pinpai_p2 span i{
+	width:110px;
 	height: 50px;
-	border: 1px solid red;
-	background:pink;
-	line-height: 50px;
-	font-size:15px;
-	text-align: center;
-	float: left;
-	margin-right: 20px;
-}
-
-#sel .li_5 p:nth-child(2){
-	width:168px;
-	height: 50px;
-	border: 1px solid red;
-	background:pink;
-	line-height: 50px;
-	font-size:15px;
-	text-align: center;
-	float: left;
-	margin-right: 20px;
-}
-
-#sel .li_5 p:nth-child(3){
-	width:60px;
-	height: 50px;
-	border:1px solid red;
-	line-height: 50px;
-	font-size:13px;
-	text-align:center;
-	float:left;
-}
-#sel .li_6{
 	display:block;
+	position: absolute;
+	left:0;
+	top:0;
+	background:orange;
+	display: none;
+}
+#pinpai .pinpai_p3{
+	height: 128px;
+	float: right;
+	width:50px;
+	height: 20px;
+	background: #ccc;
+	margin:10px 0 0 10px;
+	text-align: center;
+}
+#more{
+	width:1190px;
+	height:33px;
+	border-bottom: 1px solid #888;
+	margin:0 auto;
+}
+#more>p:nth-child(1){
+	width:100px;
+	height: 33px;
+	background: #ccc;
+	float: left;
+	line-height: 33px;
+	margin-right: 20px;
+}
+#more>p:nth-child(2){
+	line-height: 33px;
+}
+#more>p:nth-child(1) i{
+	margin-left:30px;
+}
+#sel{
+	width:1190px;
+	margin:20px auto;
+	height: 36px;
+}
+#sel ul{
+	float:left;
+}
+#sel ul li{
+	float:left;
+}
+.sel_d1 li{
+	float: left;
+	width:80px;
+	height: 36px;
+	border:1px solid #ccc;
+	border-right: none;
+	background: #eee;
+	border:1px solid #ccc;
+	line-height: 36px;
+	text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
+.sel_d2{
+	margin-left:10px;
+	width:164px;
+	height: 34px;
+	border:1px solid #ccc;
+	padding:5px 0 0 5px;
+	background:#eee;
+	margin-right: 10px;
+}
+.sel_d2 li:nth-child(1){
+	width:70px;
+	height: 26px;
+	border:1px solid #ccc;
+	line-height: 26px;
+	text-align: center;
+	background: #fff;
+}
+.sel_d2 li:nth-child(3){
+	width:70px;
+	height: 26px;
+	border:1px solid #ccc;
+	line-height: 26px;
+	text-align: center;
+	background: #fff;
+}
+.sel_d2 li:nth-child(2){
+	line-height: 30px;
+	margin:0 3px;
 	
+}
+.sel_d3{
+	width:580px;
+	height: 36px;
+	float:left;
+	border:1px solid #ccc;
+	line-height: 36px;
+	text-align: center;
+}
+.sel_d3 li{
+	margin-left:10px;
+}
+/*---------------con--------------*/
+#con{
+	width:1190px;
+	margin:30px auto;
+	
+}
+.con_ul{
+	margin-left:25px;
+}
+.con_ul li{
+	width:230px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-bottom: 20px;
+	margin-right: 15px;
+}
+#con li img{
+	width:220px;
+	height: 220px;
+}
+#con li p:nth-child(1){
+	font-size: 14px;
+	color:red;
+	line-height: 26px;
+}
+#con li .con_p2{
+	font-size: 12px;
+	line-height: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width:value;
+}
+#con li .con_p3{
+	font-size: 12px;
+	line-height: 20px;
+	color: red;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width:value;
+}
+#con li .con_btn{
+	width:200px;
+	height: 36px;
+	border:1px solid red;
+    font-size:22px ;
+    background: #fff;
+}

@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+ul,li,ol{list-style:none;}
+a{text-decoration:none;color:#353334;}
+img{border:0;display: block;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+body{font-size:12px;font-family:"微软雅黑";}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;height:0;overflow:hidden;}
+#title_wrap,#header_img,#banner_wrap{width:100%;}
+#title,#header_img img,#logo,#nav,#banner{width:1190px;margin: 0 auto;}
+/*-----------------title-----------------*/
+body{
+	background: #f9f9f8;
+}
+#title_wrap{
+	width:100%;
+	height: 110px;
+}
+#title{
+   width:950px;
+   margin:0 auto;
+   height: 110px;
+}
+#title h1{
+	margin: 25px 0;
+	display:inline-block;
+}
+/*-----------------main-----------------*/
+#main{
+	width:950px;
+	margin: 0 auto;
+	border:1px solid #ccc;
+	background:#fff;
+}
+#top{
+	width:950px;
+	height: 50px;
+	border-bottom:1px solid #ccc;
+}
+#top h1{
+	line-height: 50px;
+	color:red;
+	text-indent: 24px;
+	float:left;
+}
+#top p{
+	float: right;
+	line-height: 50px;
+	margin-right: 30px;
+	font-size: 13px;
+}
+#top p a{
+	color:#0088d7;
+	padding: 0 5px;
+}
+#bottom{
+	width:950px;
+	height: 582px;
+	margin-left: 200px;
+	margin-top: 60px;
+}
+#bottom_left{
+	width:136px;
+	height: 36px;
+	float: left;
+	margin-right: 20px;
+}
+#bottom_left p{
+	width:136px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 20px;
+	margin-bottom: 25px;
+	text-align: right;
+}
+#bottom_right{
+	width:759px;
+	float: left;
+}
+#bottom_right div{
+	width:759px;
+	height: 35px;
+	margin-bottom: 25px;
+	
+} 
+#bottom_right input{
+	width:300px;
+	height: 35px;
+	margin-bottom:20px;
+	text-indent: 24px;
+	font-stretch: 14px;
+	color:#757575;
+}
+#bottom_right div:nth-child(6)  button{
+	width:90px;
+	height: 36px;
+	border:1px solid #ccc;
+	margin-left:15px;
+}
+#bottom_right div:nth-child(5) button{
+	width:90px;
+	height: 36px;
+	border:1px solid #ccc;
+	margin-left:15px;
+	
+}
+#bottom_right div:nth-child(5) a{
+	margin-left:15px;
+	color:#0088d7;
+	text-decoration: underline;
+}
+#ck input{
+  width:13px;
+  height: 13px;
+}
+#bottom_right #zhuce{
+	width:300px;
+	height: 36px;
+	background:#fa2244;
+	color:#fff;
+	font-size:20px;
+	line-height: 36px;
+	text-align: center;
+}
